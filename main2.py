@@ -39,19 +39,20 @@ def getSize():
 
 
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless')
-# options.add_argument('--no-sandbox')
-# options.add_argument('--disable-dev-shm-usage')
+#options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 # open it, go to a website, and get results
 driver = webdriver.Chrome(options=options)
 
 
 driver.get("https://instaling.pl/teacher.php?page=login")
+time.sleep(5)
 login = driver.find_element(By.ID, "log_email")
 password = driver.find_element(By.ID, "log_password")
 login.send_keys("mopatr102")
 password.send_keys("bwyxs")
-time.sleep(1)
+time.sleep(5)
 driver.find_element(By.XPATH, '//*[@id="main-container"]/div[3]/form/div/div[3]/button').click()
 time.sleep(1)
 driver.find_element(By.XPATH, '//*[@id="student_panel"]/p[1]/a').click()
@@ -73,7 +74,7 @@ wordDe = ""
 word = ""
 
 times = 20
-while times != 1:
+while times != 0:
     wordDe = ""
     word = ""
 
